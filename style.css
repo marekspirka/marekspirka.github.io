@@ -838,7 +838,7 @@ form label{
 	}
 
 	#project{
-		margin-left: 22px;
+		margin-left: 14%;
 		grid-template-columns: repeat(2,50%);
 		gap: 0px;
 	}
@@ -852,6 +852,9 @@ form label{
 	  	height: 120px;
 	  	width: 100px;
 	}
+	#about p{
+		margin-left: 9%;
+	}
 	#contact{
 		width: 90%;
 		margin-left: 20px;
@@ -861,6 +864,13 @@ form label{
 	}
 	#experience {
 		padding: 10px;
-}
+	}
+	footer{
+		background-color:#0A2342 ;
+		height: 800px;
+	}
+	#experience h2 {
+		margin-top: 20px;
+	}
 
 }
