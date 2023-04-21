@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+	<title>Marek Spirka</title>
+	<link rel="icon" href="images/logo.png">
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+
+			var text = document.getElementById("change-text");
+      		var messages = ["Student VUT / Frontend designer","Student VUT", "Frontend designer", "Basketball player"];
+      		var colors = ["white", "#BFCC94", "#BEE9E8", "orange"];
+      		var currentMessage = 0;
+
+      		setInterval(function() {
+        		text.innerHTML = messages[currentMessage];
+        		text.style.color = colors[currentMessage];
+        		currentMessage++;
+        		if (currentMessage >= messages.length) {
+          			currentMessage = 0;
+        		}
+      			}, 2000);
+
+			const skillBars = document.querySelectorAll('.skill-bar');
+
+			const observer = new IntersectionObserver(entries => {
+		  		entries.forEach(entry => {
+		    	if (entry.isIntersecting) {
+		      		entry.target.classList.add('visible');
+		    	} else {
+		     		 entry.target.classList.remove('visible');
+		    	}
+		  		});
+			});
+
+			skillBars.forEach(skillBar => {
+			  observer.observe(skillBar);
+			});
+
+			const nameInput = document.getElementById('name');
+			const emailInput = document.getElementById('email');
+			const messageInput = document.getElementById('message');
+		      
+		    nameInput.addEventListener("input", function() {
+		    	if (nameInput.value) {
+		          	nameInput.style.backgroundColor = "#0f0"; 
+		        } else {
+		          nameInput.style.backgroundColor = "#fff"; 
+		        }
+		      });
+		      
+		    emailInput.addEventListener("input", function() {
+		        if (emailInput.value) {
+		          emailInput.style.backgroundColor = "#0f0"; 
+		        } else {
+		          emailInput.style.backgroundColor = "#fff"; 
+		        }
+		      });
+		      
+		    messageInput.addEventListener("input", function() {
+		        if (messageInput.value) {
+		          messageInput.style.backgroundColor = "#0f0"; 
+		        } else {
+		          messageInput.style.backgroundColor = "#fff"; 
+		        }
+		     });
+		    const form = document.getElementById('my-form');
+			const btnSend = document.getElementById('btn-send');
+			const messageContainer = document.getElementById('message-container');
+
+			form.addEventListener('submit', (event) => {
+			  event.preventDefault();
+			  
+			  // check if all required fields are filled
+			  const name = document.getElementById('name').value;
+			  const email = document.getElementById('email').value;
+			  const message = document.getElementById('message').value;
+			  if (name && email && message) {
+			    
+			    messageContainer.classList.add('send_mail');
+			    
+			    // reset form after 5 seconds
+			    setTimeout(() => {
+			      form.reset();
+			      messageContainer.classList.remove('send_mail')
+			      messageContainer.innerText = '';
+			      nameInput.style.backgroundColor = "#fff";
+				  emailInput.style.backgroundColor = "#fff";
+				  messageInput.style.backgroundColor = "#fff";
+			    }, 5000);
+			  }
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#education">Education</a></li>
+				<li><a href="#experience">Experience</a></li>
+				<li><a href="#portfolio">Portofolio</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+		<div id="personal">
+			<h1>
+				<span>Marek</span>
+				<span class="surname">Špirka</span>
+			</h1>
+			<p id="change-text">Student VUT / Frontend designer</p>
+		</div>
+		<div class="circle">
+			<img src="images/person.png" alt="Person">
+		</div>
+	</header>
+	<main>
+		<section id="about">
+			<h2>About ME</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed odio elit. Praesent vitae elit sed nisl ultricies fermentum sit amet a odio. Donec sed ipsum quis lacus interdum pretium vitae id felis. Nunc ut felis turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque suscipit fermentum enim, et placerat quam varius a. In eleifend ipsum vel risus blandit, at malesuada tellus dictum. Pellentesque vitae elit eu massa pellentesque faucibus ac a quam. Fusce eget est sit amet augue dignissim fermentum quis eu mauris. Nam nec magna diam. Ut id arcu nulla. Morbi eu metus non purus auctor fringilla quis vel neque. Aenean malesuada ante sit amet nibh commodo, eu rhoncus lorem accumsan. Nunc ut felis turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque suscipit fermentum enim, et placerat quam varius a. In eleifend ipsum vel risus blandit, at malesuada tellus dictum. Pellentesque vitae elit eu massa pellentesque faucibus ac a quam. </p>
+			<div id="skills">
+				<h3>Program Languages:</h3>
+				<div class="program-languages">
+				  <div class="skill">
+				    <div class="skill-bar c">
+				      <span class="skill-title">C</span><br>
+				      <span class="skill-percentage">70%</span>
+				    </div>
+				  </div>
+				  <div class="skill">
+				    <div class="skill-bar cpp">
+				      <span class="skill-title">C++</span><br>
+				      <span class="skill-percentage">30%</span>
+				    </div>
+				  </div>
+				  <div class="skill">
+				    <div class="skill-bar python">
+				      <span class="skill-title">Python</span><br>
+				      <span class="skill-percentage">60%</span>
+				    </div>
+				  </div>
+				  <div class="skill">
+				    <div class="skill-bar php">
+				      <span class="skill-title">PHP</span><br>
+				      <span class="skill-percentage">40%</span>
+				    </div>
+				  </div>
+				  <div class="skill">
+				    <div class="skill-bar csharp">
+				      <span class="skill-title">C#</span><br>
+				      <span class="skill-percentage">30%</span>
+				    </div>
+				  </div>
+				</div>
+				<h3>Languages:</h3>
+				<div class="languages">
+				  <div class="skill">
+				    <div class="skill-bar slovak">
+				      <span class="skill-title">Slovak</span><br>
+				      <span class="skill-percentage">95%</span>
+				    </div>
+				  </div>
+				  <div class="skill">
+				    <div class="skill-bar czech">
+				      <span class="skill-title">Czech</span><br>
+				      <span class="skill-percentage">80%</span>
+				    </div>
+				  </div>
+				  <div class="skill">
+				    <div class="skill-bar english">
+				      <span class="skill-title">English</span><br>
+				      <span class="skill-percentage">60%</span>
+				    </div>
+				  </div>
+				  <div class="skill">
+				    <div class="skill-bar german">
+				      <span class="skill-title">German</span><br>
+				      <span class="skill-percentage">10%</span>
+				    </div>
+				  </div>
+			</div>
+		</section>
+
+		<section id="education">
+		  <h2>Education</h2>
+			<div class="high-school">
+			  <div class="high-school-info">
+			    <h3>High School</h3>
+			    <div class="text-high-school">
+			      <p>Name: Tatranská akadémia</p>
+			      <p>Subject: Information technologies</p>
+			      <p>Year: 2017-2021</p>
+			    </div>
+			  </div>
+			  <img src="images/stredna.jpg" alt="High School Image" class="high-school-image">
+			</div>
+			<div class="university">
+				<img src="images/vyska.jpg" alt="University Image" class="university-image">
+					<div class="university-info">
+				    	<h3>University</h3>
+				    	<div class="text-university">
+				    		<p>Name: Brno University of Technology</p>
+				      		<p>Faculty: Information Technology</p>
+				      		<p>Year: 2021-now</p>
+				    	</div>
+				  </div>
+			</div>
+		</section>
+
+		<section id="experience">
+			<h2>Experience</h2>
+			<div class="job">
+				<div class="job-info">
+				    <h3>Solar Winds | Part Time</h3>
+				    <div class="text-job">
+				    	<p>City: Brno</p>
+				      	<p>About: Help with programming parts for a new project</p>
+				      	<p>Language: Python</p>
+				    </div>
+				  </div>
+			</div>
+			<div class="job">
+				<div class="job-info">
+				    <h3> Red Hat | Full Time</h3>
+				    <div class="text-job">
+				    	<p>City: Brno</p>
+				      	<p>About: Vestibulum ante ipsum primis in faucibus orci luctus</p>
+				      	<p>Language: C++</p>
+				    </div>
+				  </div>
+			</div>
+			<div class="job">
+				<div class="job-info">
+				    <h3>Lorem ipsum | Internship</h3>
+				    <div class="text-job">
+				    	<p>City: Brno</p>
+				      	<p>About: Vestibulum ante ipsum primis in faucibus orci luctus</p>
+				      	<p>Language: JavaScript</p>
+				    </div>
+				  </div>
+			</div>
+			<div class="job">
+				<div class="job-info">
+				    <h3>Vestibulum ante | Part Time</h3>
+				    <div class="text-job">
+				    	<p>City: Brno</p>
+				      	<p>About: Vestibulum ante ipsum primis in faucibus orci luctus</p>
+				      	<p>Language: Uzovka</p>
+				    </div>
+				  </div>
+			</div>
+		</section>
+		<section id="portfolio">
+			<h2>Portfolio</h2>
+			<div id="project">
+				<button class="btn" onclick="window.open('https://github.com/marekspirka')">Packet Sniffer <p> Language: C </p></button>
+				<button class="btn" onclick="window.open('https://github.com/marekspirka')">Formal Translator <p> Language: C++</button>
+				<button class="btn" onclick="window.open('https://github.com/marekspirka')">Debugger <p> Language: Python</button>
+				<button class="btn" onclick="window.open('https://github.com/marekspirka')">Lorem <p> Language: C#</button>
+				<button class="btn" onclick="window.open('https://github.com/marekspirka')">Ipsum <p> Language: C++</button>
+				<button class="btn" onclick="window.open('https://github.com/marekspirka')">Laravel <p> Language: Bash</button>
+				<button class="btn" onclick="window.open('https://github.com/marekspirka')">Packet Sniffer <p> Language: C </p></button>
+				<button class="btn" onclick="window.open('https://github.com/marekspirka')">Formal Translator <p> Language: C++</button>
+				<button class="btn" onclick="window.open('https://github.com/marekspirka')">Debugger <p> Language: Python</button>
+				<button class="btn" onclick="window.open('https://github.com/marekspirka')">Lorem <p> Language: C#</button>
+				<button class="btn" onclick="window.open('https://github.com/marekspirka')">Ipsum <p> Language: C++</button>
+				<button class="btn" onclick="window.open('https://github.com/marekspirka')">Laravel <p> Language: Bash</button>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<div id="contact">
+			<div>
+				<h3>Contact:</h3>
+				<ul class="contact-list">
+				  <li><i class="fa fa-user"></i> Name: Marek</li>
+					  <li><i class="fa fa-user"></i> Surname: Špirka</li>
+					  <li><i class="fa fa-phone"></i> Phone: <a href="tel:1234567890">123-456-7890</a></li>
+					  <li><i class="fa fa-fax"></i> Fax: <a href="tel:1234567890">123-456-7890</a></li>
+					  <li><i class="fa fa-envelope"></i> Email: <a href="mailto:marek@example.com">marek@example.com</a></li>
+				</ul>
+
+				<div class="social-links">
+				  <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+				  <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+				  <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+				  <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+				  <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+				</div>
+			</div>
+			<div id="message-container">
+				<div>
+		            <span><b>Thank You, Sir!</b></span>
+		        </div>
+			</div>
+			<form id="my-form">
+			  <h3>Contact me:</h3>
+			  <label for="name">Name:</label>
+			  <input type="text" id="name" name="name" required>
+
+			  <label for="email">Email:</label>
+			  <input type="email" id="email" name="email" required>
+
+			  <label for="message">Message:</label>
+			  <textarea id="message" name="message" rows="5" required></textarea>
+
+			  <button id="btn-send" type="submit">Send</button>
+			</form>
+			<p class="copyright">© 2023 Marek Špirka | All Rights Reserved</p>
+		</div>
+	</footer>
+</body>
+</html>
