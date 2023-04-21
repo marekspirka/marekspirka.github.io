@@ -808,3 +808,59 @@ form label{
 	}
 
 }
+@media screen and (max-width:450px){
+	#personal p{
+		width: 80%;
+		border-top: 1px solid white;
+	}
+	.high-school-info{
+		margin-left: 10px;
+		width: 80%;
+	}
+	.high-school-info h3{
+		margin-top: 35%;
+		margin-left: 28%;
+	}
+	.university-info{
+		margin-right: 10%;
+		width: 80%;
+	}
+	.university-info h3{
+		margin-top: 35%;
+		margin-left: 21%;
+	}
+	#experience {
+		height: 1250px;
+	}
+	.job{
+		padding-bottom: 0px;
+	  height: 250px;
+	}
+
+	#project{
+		margin-left: 22px;
+		grid-template-columns: repeat(2,50%);
+		gap: 0px;
+	}
+	.btn {
+			padding-top: 0;
+			font-size: 15px;
+		  background-color: white;
+	  	border: none;
+	  	color: black;
+	  	padding-top: 20px;
+	  	height: 120px;
+	  	width: 100px;
+	}
+	#contact{
+		width: 90%;
+		margin-left: 20px;
+	}
+	.copyright{
+		margin-left:65px;
+	}
+	#experience {
+		padding: 10px;
+}
+
+}
