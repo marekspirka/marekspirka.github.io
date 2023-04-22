@@ -109,7 +109,6 @@ nav {
 	text-align: center;
 }
 #about h2 {
-	margin: 0 auto;
 	font-size: 32px;
 	margin-bottom: 30px;
 	color: #333;
@@ -761,13 +760,13 @@ form label{
   }
   .hamburger {
   	margin-left: 50px;
-  	margin-top:480px;
+  	margin-top:440px;
     display: block;
   }
   .open  #links{
   	background-color: #0A2342;
   	position: absolute;
-  	top: 500px;
+  	top: 460px;
     display: flex;
   }
   .fa-bars {
