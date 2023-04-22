@@ -8,6 +8,7 @@
 	<title>Marek Spirka</title>
 	<link rel="icon" href="images/logo.png">
 	<script>
+		//script for go UP button
 		const scrollToTop = () => {
 			  window.scrollTo({
 			    top: 0,
@@ -24,7 +25,7 @@
 			  }
 			}
 		document.addEventListener('DOMContentLoaded', () => {
-
+			//script for hamburger menu for small devices
 			const hamburger = document.querySelector('.hamburger');
 			const nav = document.querySelector('nav');
 			const about_me = document.querySelector('#about');
@@ -34,7 +35,7 @@
 			  about_me.classList.toggle('open_nav');
 			});
 
-
+			//script na zmenu textu a farby kazdych 2 sekundy
 			var text = document.getElementById("change-text");
       		var messages = ["Student VUT / Frontend designer","Student VUT", "Frontend designer", "Basketball player"];
       		var colors = ["white", "#BFCC94", "#BEE9E8", "orange"];
@@ -48,7 +49,7 @@
           			currentMessage = 0;
         		}
       			}, 2000);
-
+      		//script na graficke zobraznie skill baru podla percent kolko ma dany typ
 			const skillBars = document.querySelectorAll('.skill-bar');
 
 			const observer = new IntersectionObserver(entries => {
@@ -64,7 +65,8 @@
 			skillBars.forEach(skillBar => {
 			  observer.observe(skillBar);
 			});
-
+			//script pre formular na zazelenanie background color ak je policko vyplnene
+			//a odoslanie formulara s vyskocenim podakovanim na vrchu obrazovky
 			const nameInput = document.getElementById('name');
 			const emailInput = document.getElementById('email');
 			const messageInput = document.getElementById('message');
@@ -107,7 +109,7 @@
 			    
 			    messageContainer.classList.add('send_mail');
 			    
-			    // reset form after 5 seconds
+			    // script na resetovanie kazdych 5 sekund po vyplneni formulara
 			    setTimeout(() => {
 			      form.reset();
 			      messageContainer.classList.remove('send_mail')
