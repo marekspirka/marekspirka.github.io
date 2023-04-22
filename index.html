@@ -8,6 +8,21 @@
 	<title>Marek Spirka</title>
 	<link rel="icon" href="images/logo.png">
 	<script>
+		const scrollToTop = () => {
+			  window.scrollTo({
+			    top: 0,
+			    behavior: "smooth"
+			  });
+			}
+
+			window.onscroll = function() {
+			  const button = document.getElementById("goUpButton");
+			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			    button.style.display = "block";
+			  } else {
+			    button.style.display = "none";
+			  }
+			}
 		document.addEventListener('DOMContentLoaded', () => {
 
 			const hamburger = document.querySelector('.hamburger');
@@ -123,8 +138,10 @@
 		</nav>
 		<div id="personal">
 			<h1>
-				<span>Marek</span>
-				<span class="surname">Špirka</span>
+				<a href="https://marekspirka.github.io/">
+					<span>Marek</span>
+					<span class="surname">Špirka</span>
+				</a>
 			</h1>
 			<p id="change-text">Student VUT / Frontend designer</p>
 		</div>
@@ -325,6 +342,7 @@
 			</form>
 			<p class="copyright">© 2023 Marek Špirka | All Rights Reserved</p>
 		</div>
+		<button onclick="scrollToTop()" id="goUpButton">Up</button>
 	</footer>
 </body>
 </html>

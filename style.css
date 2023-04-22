@@ -72,6 +72,10 @@ nav {
 	letter-spacing: 0.2rem;
 	margin-bottom: 0;
 }
+#personal h1 a{
+	text-decoration: none;
+	color: white;
+}
 #personal p{
 	margin-top: 12px;
 	color: white;
@@ -580,18 +584,38 @@ form label{
     width: 180px;
 }
 #message-container div b:nth-child(1){
-    font-weight: normal;
-    margin-bottom: 2px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    display: block;
-    width: 200px;
+  font-weight: normal;
+  margin-bottom: 2px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+	width: 200px;
 }
 .send_mail{
 	display: block !important;
-    animation-direction: alternate;
-    animation: goup 0.5s;
+  animation-direction: alternate;
+  animation: goup 0.5s;
 }
+#goUpButton {
+  display: none;
+  position: fixed;
+  bottom: 25px;
+  right: 15px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #7bb0af;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 25px;
+}
+
+#goUpButton:hover {
+  background-color: #d35400;
+}
+
 
 @media screen and (max-width:1270px){
 	#experience {
@@ -744,7 +768,10 @@ form label{
 	}
 }
 @media screen and (max-width:700px){
-	 #links {
+	#goUpButton {
+  	display: none !important;
+	}
+	#links {
     display: none;
     position: absolute;
     top: 70px;
@@ -854,7 +881,6 @@ form label{
 		color: white;
 		border-top: 1px solid white;
 	}
-
 }
 @media screen and (max-width:450px){
 	#personal p{
@@ -926,5 +952,4 @@ form label{
 	#experience h2 {
 		margin-top: 20px;
 	}
-
 }
