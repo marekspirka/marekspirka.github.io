@@ -10,6 +10,16 @@
 	<script>
 		document.addEventListener('DOMContentLoaded', () => {
 
+			const hamburger = document.querySelector('.hamburger');
+			const nav = document.querySelector('nav');
+			const about_me = document.querySelector('#about');
+
+			hamburger.addEventListener('click', () => {
+			  nav.classList.toggle('open');
+			  about_me.classList.toggle('open_nav');
+			});
+
+
 			var text = document.getElementById("change-text");
       		var messages = ["Student VUT / Frontend designer","Student VUT", "Frontend designer", "Basketball player"];
       		var colors = ["white", "#BFCC94", "#BEE9E8", "orange"];
@@ -99,14 +109,17 @@
 <body>
 	<header>
 		<nav>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#education">Education</a></li>
-				<li><a href="#experience">Experience</a></li>
-				<li><a href="#portfolio">Portofolio</a></li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
+		  <div class="hamburger">
+		    <i class="fas fa-bars"></i>
+		  </div>
+		  <ul id="links">
+		    <li><a href="#">Home</a></li>
+		    <li><a href="#about">About</a></li>
+		    <li><a href="#education">Education</a></li>
+		    <li><a href="#experience">Experience</a></li>
+		    <li><a href="#portfolio">Portfolio</a></li>
+		    <li><a href="#contact">Contact</a></li>
+		  </ul>
 		</nav>
 		<div id="personal">
 			<h1>

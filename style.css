@@ -22,27 +22,39 @@ nav {
 	margin-right: 8%;
 	margin-top: 2%;
 }
-nav ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+
+#links {
+	list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
 }
-nav li {
-	display: inline-block;
-	margin-left: 20px;
+
+#links li {
+  margin-left: 20px;
 }
-nav a {
-	color: white;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-size: 14px;
-	font-weight: bold;
-	letter-spacing: 1px;
-	transition: all 0.3s ease-in-out;
+
+#links a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
 }
-nav a:hover {
-	color: #7bb0af;
-	transition: 0.5s;
+
+#links a:hover {
+  color: #7bb0af;
+}
+
+.hamburger {
+  cursor: pointer;
+  display: none;
+}
+
+.hamburger i {
+  color: white;
+  font-size: 24px;
 }
 
 #personal{
@@ -250,15 +262,15 @@ nav a:hover {
 }
 .high-school{
 	margin-left: 50%;
-  	display: grid;
-  	grid-template-columns: 35% 65%;
-  	grid-template-rows:  400px;
-  	align-items: center;
-  	background-color: white;
-  	height: 400px;
-  	width: 75%;
-  	margin: 0 auto;
-  	border: 1px dotted #BEE9E8;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  grid-template-rows:  400px;
+  align-items: center;
+  background-color: white;
+  height: 400px;
+  width: 75%;
+  margin: 0 auto;
+  border: 1px dotted #BEE9E8;
 }
 .high-school:hover{
 	transition: 0.5s;
@@ -270,12 +282,13 @@ nav a:hover {
 	margin-left: 10%;
 }
 .high-school-image {
+
 	margin-right: 50px;
 	grid-column: 2 / 3;
 	grid-row: 1 / 2;
-  	width: 100%;
-  	height: 100%;
-  	clip-path: polygon(100% 100%, 100% -120%, 0% 100%);
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(100% 100%, 100% -120%, 0% 100%);
 }
 
 .high-school-info {
@@ -407,6 +420,7 @@ nav a:hover {
 	background-color: white;
   	border: none;
   	color: black;
+  	padding-top: 5px;
   	height: 160px;
   	width: 180px;
   	text-align: center;
@@ -417,10 +431,10 @@ nav a:hover {
   	border: 1px dotted #BEE9E8;
 }
 .btn:hover{
-	transform: scale(1.1);
-	background-color: #0A2342 ;
-	color: white;
-	transition: 0.5s;
+		transform: scale(1.1);
+		background-color: #0A2342 ;
+		color: white;
+		transition: 0.5s;
 }
 
 /*---------------------Footer----------------------*/
@@ -731,6 +745,42 @@ form label{
 	}
 }
 @media screen and (max-width:700px){
+	 #links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  #links li {
+    margin: 10px 0;
+  }
+  .hamburger {
+  	margin-left: 50px;
+  	margin-top:480px;
+    display: block;
+  }
+  .open  #links{
+  	background-color: #0A2342;
+  	position: absolute;
+  	top: 500px;
+    display: flex;
+  }
+  .fa-bars {
+    font-size: 25px;
+  }
+  #links a:hover {
+  	color: #7bb0af;
+  	background-color: white;
+  	padding: 15px;
+	}
+  .open_nav h2{
+		padding-top: 220px;
+	}
 	.high-school-image {
 		display: none;
 	}
